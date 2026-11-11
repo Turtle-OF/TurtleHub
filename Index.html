@@ -25,6 +25,7 @@
         <a href="drontfront.html">DronFront</a>
       </nav>
 
+      <button class="button button-primary" type="button" data-open-registration>Регистрация</button>
       <!-- <a class="button button-primary" href="https://discord.gg/Zry3S6BJYK">Discord</a> -->
     </div>
   </header>
@@ -150,6 +151,31 @@
       </div>
     </section>
   </main>
+
+  <dialog class="registration-dialog" data-registration-dialog aria-labelledby="registration-title">
+    <div class="registration-heading">
+      <div>
+        <p class="eyebrow eyebrow-dark">TurtleHub</p>
+        <h2 id="registration-title">Создать аккаунт</h2>
+      </div>
+      <button class="dialog-close" type="button" data-close-registration aria-label="Закрыть окно">×</button>
+    </div>
+    <form class="registration-form" data-registration-form>
+      <label for="registration-username">Логин</label>
+      <input id="registration-username" name="username" type="text" minlength="3" maxlength="20"
+        pattern="[A-Za-z0-9_]+" autocomplete="username" required
+        title="От 3 до 20 символов: латинские буквы, цифры и знак _" />
+      <small>От 3 до 20 символов: латинские буквы, цифры и знак _</small>
+
+      <label for="registration-password">Пароль</label>
+      <input id="registration-password" name="password" type="password" minlength="8" maxlength="128"
+        autocomplete="new-password" required />
+      <small>Минимум 8 символов</small>
+
+      <button class="button button-primary registration-submit" type="submit">Зарегистрироваться</button>
+      <p class="registration-message" data-registration-message role="status" aria-live="polite"></p>
+    </form>
+  </dialog>
 
   <footer class="site-footer">
     <div class="container footer-inner">
