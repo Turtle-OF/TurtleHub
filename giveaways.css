@@ -1,0 +1,31 @@
+@import url("./common.css");
+
+.photo-strip {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 22px;
+}
+.photo-box {
+  min-height: 180px; border-radius: 18px; position: relative; overflow: hidden;
+  border: 1px solid var(--line); display: flex; align-items: end; padding: 14px;
+  background-size: cover; background-position: center;
+}
+.photo-box::before {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(31,51,41,0.1), rgba(31,51,41,0.45));
+}
+.photo-box span { position: relative; z-index: 1; color: white; font-weight: 800; }
+.photo-one {
+  background: linear-gradient(135deg, rgba(164,206,169,0.3), rgba(46,107,78,0.18)),
+    url('https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=700&q=80') center/cover no-repeat;
+}
+.photo-two {
+  background: linear-gradient(135deg, rgba(164,206,169,0.3), rgba(46,107,78,0.18)),
+    url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=700&q=80') center/cover no-repeat;
+}
+.photo-three {
+  background: linear-gradient(135deg, rgba(164,206,169,0.3), rgba(46,107,78,0.18)),
+    url('https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=700&q=80') center/cover no-repeat;
+}
+
+@media (max-width: 860px) {
+  .photo-strip { grid-template-columns: 1fr; }
+}

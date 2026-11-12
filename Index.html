@@ -7,26 +7,35 @@
   <meta name="description" content= "WELCOME TO TURTLEHUB " />
   <title>TurtleHub</title>
   <link rel="stylesheet" href="index.css" />
-  <script src="index.js" defer></script>
+  <script type="module" src="index.js"></script>
 </head>
 <body>
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="index.html" aria-label="TurtleHub главная">
-        <span class="brand-mark" aria-hidden="true">🐢</span>
-        <span class="brand-name">TurtleHub</span>
+      <a class="brand" href="Index.html" aria-label="TurtleHub главная">
+        <img class="brand-mark" src="./Turtle_logo1.jpg" alt="" width="58" height="58" />
       </a>
 
-      <nav class="nav-links" aria-label="Главная навигация">
-        <!-- <a href="index.html">Главная</a> -->
-        <a href="wartycoon.html">WarTycoon</a>
-        <a href="giveaways.html">Розыгрыши</a>
-        <a href="clans.html">О нас</a>
-        <a href="drontfront.html">DronFront</a>
-      </nav>
+      <button class="menu-toggle" type="button" data-menu-toggle aria-controls="site-navigation"
+        aria-expanded="false" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
 
-      <button class="button button-primary" type="button" data-open-registration>Регистрация</button>
-      <!-- <a class="button button-primary" href="https://discord.gg/Zry3S6BJYK">Discord</a> -->
+      <div class="nav-menu" id="site-navigation" data-nav-menu>
+        <nav class="nav-links" aria-label="Главная навигация">
+          <a href="Index.html#faq">FAQ и контакты</a>
+          <a href="https://discord.gg/Zry3S6BJYK" target="_blank" rel="noopener noreferrer">Discord</a>
+          <a href="wartycoon.html">WarTycoon</a>
+          <a href="giveaways.html">Розыгрыши</a>
+          <a href="drontfront.html">DronFront</a>
+        </nav>
+
+        <div class="auth-actions" data-auth-buttons>
+          <a class="button button-login" href="Index.html?auth=login" data-open-login>Login</a>
+          <a class="button button-primary" href="Index.html?auth=register" data-open-registration>Sign Up</a>
+        </div>
+        <button class="button button-primary auth-logout" type="button" data-auth-logout hidden>Выйти</button>
+      </div>
     </div>
   </header>
 
@@ -40,13 +49,12 @@
              Личный сайт самой черепашки и его команды.
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="wartycoon.html">WarTycoon</a>
-            <a class="button button-secondary" href="giveaways.html">Розыгрыши</a>
+            <a class="button button-primary" href="#projects">Мои проекты</a>
+            <a class="button button-secondary" href="#events">Ближайшее событие</a>
           </div>
         </div>
 
         <div class="hero-visual" aria-label="Иллюстрация комьюнити TurtleHub">
-          <!-- <div class="badge">Live community • 3+ клана</div> -->
           <div class="shell-art" aria-hidden="true">
             <!-- <div class="shell-emoji">🐢</div> -->
           </div>
@@ -54,11 +62,11 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="projects">
       <div class="container">
         <div class="section-header">
-          <p class="eyebrow eyebrow-dark">Что здесь</p>
-          <h2>Личный сайт где собрана вся память обо мне</h2>
+          <p class="eyebrow eyebrow-dark">Мои проекты</p>
+          <h2>Всё главное о TurtleHub в одном месте</h2>
         </div>
 
         <div class="feature-grid">
@@ -67,7 +75,8 @@
                 <img src="WT_logo1.png" alt="WarTycoon" />
             </div>
             <h3>WarTycoon</h3>
-            <p>Сама игра и атмосфера вокруг неё — пространство, где собираются игроки, идеи и хороший вайб.</p>
+            <p>Игра, игровые события и сообщество, которое собирается вокруг WarTycoon.</p>
+            <a class="text-link" href="wartycoon.html">О проекте →</a>
           </article>
 
           <article class="info-card">
@@ -75,16 +84,65 @@
                 <img src="GW_logo1.png" alt="Розыгрыши" />
             </div>
             <h3>Розыгрыши</h3>
-            <p>Я проводил и продолжаю делать различные розыгрыши, где будут фото, подарки и живой интерес к событию.</p>
+            <p>Анонсы розыгрышей, условия участия и итоги прошедших событий.</p>
+            <a class="text-link" href="giveaways.html">К розыгрышам →</a>
           </article>
 
           <article class="info-card">
             <div class="card-illustration illustration-3" aria-hidden="true">
                 <img src="DF_logo1.jpg" alt="DronFront" />
             </div>
-            <h3>Dronefront</h3>
-            <p>Всё про игру DronFront и её разработку.</p>
+            <h3>DronFront</h3>
+            <p>Информация об игре и разработке проекта в Roblox.</p>
+            <a class="text-link" href="drontfront.html">О проекте →</a>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="events">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow eyebrow-dark">События</p>
+          <h2>Анонсы и розыгрыши</h2>
+        </div>
+        <div class="dashboard-grid">
+          <article class="dashboard-card event-card">
+            <p class="eyebrow">Ближайшее событие</p>
+            <h3>Анонс скоро</h3>
+            <p>Дата и подробности появятся здесь, когда будет объявлено следующее событие. Анонсы также публикуются в Discord.</p>
+            <a class="button button-secondary" href="https://discord.gg/Zry3S6BJYK" target="_blank" rel="noopener noreferrer">Следить в Discord</a>
+          </article>
+          <article class="dashboard-card giveaway-card" id="active-giveaway">
+            <p class="eyebrow">Активный розыгрыш</p>
+            <h3>Следи за новыми розыгрышами</h3>
+            <p>Когда появится новый розыгрыш, здесь будут указаны приз, срок и условия участия.</p>
+            <a class="button button-primary" href="giveaways.html">Открыть розыгрыши</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow eyebrow-dark">Галерея</p>
+          <h2>Проекты TurtleHub</h2>
+          <p class="muted-copy">Загляни в проекты и события сообщества.</p>
+        </div>
+        <div class="media-grid">
+          <a class="media-card" href="wartycoon.html">
+            <span class="media-preview"><img src="WT_logo1.png" alt="" /></span>
+            <span class="media-caption">WarTycoon</span>
+          </a>
+          <a class="media-card" href="giveaways.html">
+            <span class="media-preview"><img src="GW_logo1.png" alt="" /></span>
+            <span class="media-caption">Розыгрыши и события</span>
+          </a>
+          <a class="media-card" href="drontfront.html">
+            <span class="media-preview"><img src="DF_logo1.jpg" alt="" /></span>
+            <span class="media-caption">DronFront</span>
+          </a>
         </div>
       </div>
     </section>
@@ -96,7 +154,6 @@
             <p class="eyebrow eyebrow-dark">Комьюнити</p>
             <h2>Эмоции, события и живое участие</h2>
           </div>
-          <a class="text-link" href="clans.html">Посмотреть кланы →</a>
         </div>
 
         <div class="gallery-grid">
@@ -141,13 +198,58 @@
       </div>
     </section>
 
+    <section class="section" id="updates">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow eyebrow-dark">Новости</p>
+          <h2>Новости и обновления</h2>
+        </div>
+        <article class="dashboard-card updates-card">
+          <h3>Новых публикаций пока нет</h3>
+          <p>Здесь будут появляться новости TurtleHub, итоги событий и обновления проектов.</p>
+          <a class="text-link" href="https://discord.gg/Zry3S6BJYK" target="_blank" rel="noopener noreferrer">Следить за анонсами в Discord →</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container faq-contact-grid">
+        <div>
+          <div class="section-header">
+            <p class="eyebrow eyebrow-dark">Помощь</p>
+            <h2>Частые вопросы</h2>
+          </div>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>Что такое TurtleHub?</summary>
+              <p>Это место, где собраны мои проекты, новости и информация о событиях сообщества.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Где узнать о новом розыгрыше?</summary>
+              <p>Следи за разделом розыгрышей на сайте и за анонсами в Discord.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Где задать вопрос или связаться?</summary>
+              <p>Напиши в Discord TurtleHub — там можно узнать о проектах и ближайших событиях.</p>
+            </details>
+          </div>
+        </div>
+        <aside class="contact-card">
+          <p class="eyebrow eyebrow-dark">Контакты</p>
+          <h2>Есть вопрос?</h2>
+          <p>Напиши нам в Discord — поможем сориентироваться по проектам и событиям.</p>
+          <a class="button button-primary" href="https://discord.gg/Zry3S6BJYK" target="_blank" rel="noopener noreferrer">Открыть Discord</a>
+        </aside>
+      </div>
+    </section>
+
     <section class="section community-section">
       <div class="container community-box">
         <div>
           <p class="eyebrow eyebrow-dark">Стань частью</p>
           <h2>Если тебе близок игровой вайб — TurtleHub для тебя.</h2>
         </div>
-        <a class="button button-primary" href="clans.html">Смотреть кланы</a>
+        <a class="button button-primary" href="https://discord.gg/Zry3S6BJYK" target="_blank" rel="noopener noreferrer">Присоединиться в Discord</a>
       </div>
     </section>
   </main>
@@ -156,7 +258,7 @@
     <div class="registration-heading">
       <div>
         <p class="eyebrow eyebrow-dark">TurtleHub</p>
-        <h2 id="registration-title">Создать аккаунт</h2>
+        <h2 id="registration-title" data-auth-title>Создать аккаунт</h2>
       </div>
       <button class="dialog-close" type="button" data-close-registration aria-label="Закрыть окно">×</button>
     </div>
@@ -170,9 +272,10 @@
       <label for="registration-password">Пароль</label>
       <input id="registration-password" name="password" type="password" minlength="8" maxlength="128"
         autocomplete="new-password" required />
-      <small>Минимум 8 символов</small>
+      <small data-password-hint>Минимум 8 символов</small>
 
-      <button class="button button-primary registration-submit" type="submit">Зарегистрироваться</button>
+      <button class="button button-primary registration-submit" data-auth-submit type="submit">Зарегистрироваться</button>
+      <button class="auth-mode-toggle" data-auth-toggle type="button">Уже есть аккаунт? Войти</button>
       <p class="registration-message" data-registration-message role="status" aria-live="polite"></p>
     </form>
   </dialog>
@@ -185,10 +288,24 @@
         <a href="giveaways.html">Розыгрыши</a>
         <a href="drontfront.html">DronFront</a>
       </div>
+      <nav class="footer-socials" aria-label="Социальные сети">
+        <a class="footer-social" href="https://t.me/" target="_blank" rel="noopener noreferrer" aria-label="Telegram" title="Telegram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.4 4.6 18.2 20c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L5.6 13.6.7 12.1c-1.1-.3-1.1-1 .2-1.5L20 3.2c.9-.3 1.7.2 1.4 1.4Z"/></svg>
+        </a>
+        <a class="footer-social" href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X" title="X">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.6 5.6 22H2.4l7.3-8.4L1.8 2h6.5l4.5 6.8L18.9 2Zm-1.1 18h1.7L7.3 3.9H5.5L17.8 20Z"/></svg>
+        </a>
+        <a class="footer-social" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3V9.3c0-3 1.8-4.7 4.5-4.7 1.3 0 2.6.2 2.6.2v2.9h-1.5c-1.5 0-2 .9-2 1.9V12H17l-.5 3.5h-2.8v8.4A12 12 0 0 0 24 12Z"/></svg>
+        </a>
+        <a class="footer-social" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg>
+        </a>
+      </nav>
     </div>
   </footer>
 
-  <nav class="floating-socials" aria-label="Социальные сети">
+  <!-- <nav class="floating-socials" aria-label="Социальные сети">
     <a class="floating-social" href="https://t.me/" target="_blank" rel="noopener noreferrer" aria-label="Telegram" title="Telegram">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.4 4.6 18.2 20c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L5.6 13.6.7 12.1c-1.1-.3-1.1-1 .2-1.5L20 3.2c.9-.3 1.7.2 1.4 1.4Z"/></svg>
     </a>
@@ -204,6 +321,6 @@
     <a class="floating-social" data-translate-link href="https://translate.google.com/" target="_blank" rel="noopener noreferrer" aria-label="Перевести страницу на английский" title="Перевести страницу">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h10M8 3v2m4 0c-.5 4-3.3 7.1-7 9m1-5c1.1 2.4 3.2 4.4 5.8 5.6M14 20l4-10 4 10m-6.5-3h5"/></svg>
     </a>
-  </nav>
+  </nav> -->
 </body>
 </html>
